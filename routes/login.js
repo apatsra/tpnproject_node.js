@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
-// get / is get path in app.js eg. app.use(/home) / mean /home
+/* GET login page. */
 router.get('/', function(req, res, next) {
-  res.render('home', { title: 'Express' });
+    //represent to view 
+  res.render('login', { title: 'Express' });
 });
 
 module.exports = router;
