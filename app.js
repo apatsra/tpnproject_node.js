@@ -10,6 +10,8 @@ var usersRouter = require('./routes/users');
 var homeRouter = require('./routes/home');
 var loginRouter = require('./routes/login');
 var users_dataRouter = require('./routes/users_data');
+var slipRouter = require('./routes/slip');
+var users_profileRouter = require('./routes/users_profile');
 var app = express();
 
 // view engine setup
@@ -29,6 +31,8 @@ app.use('/users', usersRouter);
 app.use('/home', homeRouter);
 app.use('/login', loginRouter);
 app.use('/users_data', users_dataRouter);
+app.use('/slip', slipRouter);
+app.use('/users_profile', users_profileRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
