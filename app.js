@@ -5,10 +5,11 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 // set router here 1
-var indexRouter = require('./routes/index');
+// var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var homeRouter = require('./routes/home');
 var loginRouter = require('./routes/login');
+var signupRouter = require('./routes/signup');
 var users_dataRouter = require('./routes/users_data');
 var slipRouter = require('./routes/slip');
 var users_profileRouter = require('./routes/users_profile');
@@ -26,10 +27,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 //set path here 2
-app.use('/', indexRouter);
+// app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/home', homeRouter);
 app.use('/login', loginRouter);
+app.use('/signup', signupRouter);
 app.use('/users_data', users_dataRouter);
 app.use('/slip', slipRouter);
 app.use('/users_profile', users_profileRouter);
