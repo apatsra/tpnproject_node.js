@@ -102,28 +102,14 @@
                     <div class="col-12">
                       <button class="btn btn-success w-100" id="submitData" style="border-radius: 50px;"
                         type="button"><a href="home" style="color: #f6f9ff;">Update Employee</a></button>
-                    </div>
-                   
+                    </div>                 
                   </form>
-
                 </div>
               </div>
-
-              <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-
-              </div>
-
             </div>
           </div>
         </div>
-
       </section>
-
-
     </div>
   </main><!-- End #main -->
 
@@ -142,21 +128,17 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
 </body>
-
 </html>
 
 
 <script type="module">
-  // Import the functions you need from the SDKs you need
+  // Import the functions 
   import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
   import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
   import { getDatabase,set,ref } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
 
-  // Your web app's Firebase configuration
+  // app's Firebase configuration
   const firebaseConfig = {
     apiKey: "AIzaSyCSQlrYcSHgvIYUIRdfOiAgr5Iqy1Lvo1Y",
     authDomain: "tpnproject-64bf6.firebaseapp.com",
@@ -165,7 +147,6 @@
     messagingSenderId: "189706171725",
     appId: "1:189706171725:web:d5afa84d60a680e1caf304"
   };
-
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const auth = getAuth();
@@ -177,19 +158,15 @@
 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        // Signed in
         const user = userCredential.user;
         set(ref(database, 'users/' + user.uid), {         
           email: email,
           password: password
         })
           .then(() => {
-            // Data saved successfully!
-
             alert('user created successfully');
           })
           .catch((error) => {
-            // The write failed...
             alert(error);
           });
 
@@ -197,7 +174,6 @@
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
-        // ..
         alert(errorMessage);
       });
   });
