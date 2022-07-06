@@ -42,7 +42,6 @@
       }
 
     }
-
     @media screen and (max-width: 850px) {
       .container {
         width: 300px;
@@ -129,21 +128,20 @@
   <script src="assets/js/main.js"></script>
 </body>
 
-</html>
-
 <script type="module">
-  // Import the functions 
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
-  import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
+  // Your web app's Firebase configuration
   const firebaseConfig = {
-    apiKey: "AIzaSyCSQlrYcSHgvIYUIRdfOiAgr5Iqy1Lvo1Y",
-    authDomain: "tpnproject-64bf6.firebaseapp.com",
-    projectId: "tpnproject-64bf6",
-    storageBucket: "tpnproject-64bf6.appspot.com",
-    messagingSenderId: "189706171725",
-    appId: "1:189706171725:web:d5afa84d60a680e1caf304"
+    apiKey: "AIzaSyBJa71XulJCSUUW8rbu6uP5eqDROm3kQ8M",
+    authDomain: "tpn-project-62.firebaseapp.com",
+    projectId: "tpn-project-62",
+    storageBucket: "tpn-project-62.appspot.com",
+    messagingSenderId: "431129345062",
+    appId: "1:431129345062:web:176f376b4d719ecc70fae7"
   };
 
   // Initialize Firebase
@@ -164,7 +162,7 @@
           last_login: lgDate,
         })
           .then(() => {
-            alert('user created successfully');
+            alert('user loggd in successfully');
           })
           .catch((error) => {
             alert(error);
@@ -175,12 +173,6 @@
         const errorMessage = error.message;
         alert(rrorMessage);
       });
-
-    // sign out user
-    //   signOut(auth).then(() => {
-    //          // Sign-out successful.
-    //   }).catch((error) => {
-    //       // An error happened.
-    //   });
   });
 </script>
+</html>

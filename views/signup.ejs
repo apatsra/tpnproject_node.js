@@ -151,30 +151,4 @@
   const app = initializeApp(firebaseConfig);
   const auth = getAuth();
   const database = getDatabase(app);
-
-  submitData.addEventListener('click', (e) => {
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('psw').value;
-
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        set(ref(database, 'users/' + user.uid), {         
-          email: email,
-          password: password
-        })
-          .then(() => {
-            alert('user created successfully');
-          })
-          .catch((error) => {
-            alert(error);
-          });
-
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert(errorMessage);
-      });
-  });
 </script>
