@@ -43,34 +43,51 @@
     <script src="assets/js/main.js"></script>
 
 </head>
+
 <body>
     <style>
-        @media screen and (max-width: 768px) {
+        @media only screen and (max-width: 736px) { 
             #icon-image {
-                margin-left: -30px;
+                margin-left: 0px;
             }
-
+            .card-body {
+                margin-left: 0px;
+            }
+        
         }
 
-        @media screen and (max-width: 850px) {
-            .container {
-                width: 300px;
-                padding-right: 75px;
-            }
-        }
     </style>
-    <main>
-        <div>
-            <h3>Sign Up</h3>
-            <input type="text" id="nameTpn" class="form-control mb-3">
-            <input type="text" id="userTpn" class="form-control mb-3">
-            <input type="text" id="passTpn" class="form-control mb-3">
-            <button type="text" id="sub_btn" class="btn btn-outline-primary mb-3">Sign Up</button>
-        </div>
-    </main>
-
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
+    <div class="container">
+        <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+                        <div class="d-flex justify-content-center py-4">
+                            <a href="index.html" class="logo d-flex align-items-center w-auto">
+                                <img src="./images/tpn.jpg" alt="">
+                                <span class="d-none d-lg-block text-success">TPN</span>
+                            </a>
+                        </div>
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="pt-4 pb-2">
+                                    <h5 class="card-title text-success text-center pb-0 fs-4">Update User</h5>
+                                    <p class="text-center small">Enter your username & password </p>
+                                </div>
+                                <div id="icon-image"><img src="images/p6.jpg" alt="" width="300" class="align-items-center mb-3"></div>
+                                <div class="col-12">
+                                    <input type="text" id="nameTpn" class="form-control rounded-pill border-0 shadow-sm px-4 mb-3"  style="background-color: #f6f9ff" placeholder="Enter your name">
+                                    <input type="text" id="userTpn" class="form-control rounded-pill border-0 shadow-sm px-4 mb-3"  style="background-color: #f6f9ff" placeholder="Enter your username">
+                                    <input type="text" id="passTpn"class="form-control rounded-pill border-0 shadow-sm px-4 mb-3"  style="background-color: #f6f9ff" placeholder="Password">
+                                    <button type="text" id="sub_btn" class="btn btn-success w-100 mb-3">Sign Up</button>
+                                </div>                  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-app.js";
         const firebaseConfig = {
@@ -84,9 +101,9 @@
         };
         const app = initializeApp(firebaseConfig);
 
-        import  { getDatabase, ref, set, child, get }
+        import { getDatabase, ref, set, child, get }
             from "https://www.gstatic.com/firebasejs/9.8.4/firebase-database.js";
-        
+
             const db = getDatabase();
 
         const name = document.getElementById('nameTpn');
@@ -94,47 +111,45 @@
         const pass = document.getElementById('passTpn');
         const submit = document.getElementById('sub_btn');
 
-        function Validation(){
+        function Validation() {
             let nameregex = /^[a-zA-Z\s]+$/;
             let userregex = /^[a-zA-Z0-9]{5,}$/;
-            
-            if(!nameregex.test(name.value)){
+
+            if (!nameregex.test(name.value)) {
                 alert("the name should only contain alphabets!");
                 return false;
             }
-            if(!userregex.test(username.value)){
+            if (!userregex.test(username.value)) {
                 alert("username can only be alphabets!");
                 return false;
             }
             return true;
         }
-        function RegisterUser(){
-            if(!Validation()){
+        function RegisterUser() {
+            if (!Validation()) {
                 return;
             };
             const dbRef = ref(db);
-
-            get(child(dbRef, "UsersList/"+ username.value)).then((snapshot)=>{
-                if(snapshot.exists()){
+            get(child(dbRef, "UsersList/" + username.value)).then((snapshot) => {
+                if (snapshot.exists()) {
                     alert("Account Already Exist!");
                 }
-                else{
-                    set(ref(db, "UsersList/"+ username.value),
+                else {
+                    set(ref(db, "UsersList/" + username.value),
                     {
                         username: username.value,
                         password: pass.value
                     })
-                    .then(()=>{
+                    .then(() => {
                         alert("user added successfully");
+                        })
+                    .catch((error) => {
+                        alert("error" + error);
                     })
-                    .catch((error)=>{
-                        alert("error"+ error);
-                    })   
                 }
             });
         }
         submit.addEventListener('click', RegisterUser);
     </script>
 </body>
-
 </html>
