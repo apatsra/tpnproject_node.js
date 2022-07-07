@@ -63,12 +63,11 @@
         <div>
             <h3>Sign Up</h3>
             <input type="text" id="nameTpn" class="form-control mb-3">
-            <input type="text" id="emailTpn" class="form-control mb-3">
             <input type="text" id="userTpn" class="form-control mb-3">
             <input type="text" id="passTpn" class="form-control mb-3">
             <button type="text" id="sub_btn" class="btn btn-outline-primary mb-3">Sign Up</button>
         </div>
-    </main><!-- End #main -->
+    </main>
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
@@ -91,22 +90,16 @@
             const db = getDatabase();
 
         const name = document.getElementById('nameTpn');
-        const email = document.getElementById('emailTpn');
         const username = document.getElementById('userTpn');
         const pass = document.getElementById('passTpn');
         const submit = document.getElementById('sub_btn');
 
         function Validation(){
             let nameregex = /^[a-zA-Z\s]+$/;
-            let emailregex = /^[a-zA-Z0-9]+@(gmail|yahoo|outlook)\.com$/;
             let userregex = /^[a-zA-Z0-9]{5,}$/;
             
             if(!nameregex.test(name.value)){
                 alert("the name should only contain alphabets!");
-                return false;
-            }
-            if(!emailregex.test(email.value)){
-                alert("enter a valid email");
                 return false;
             }
             if(!userregex.test(username.value)){
@@ -128,7 +121,6 @@
                 else{
                     set(ref(db, "UsersList/"+ username.value),
                     {
-                        email: email.value,
                         username: username.value,
                         password: pass.value
                     })
