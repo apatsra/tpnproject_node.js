@@ -2,174 +2,168 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Employee Login </title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <title>Employee Login </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="./images/tpn.jpg" rel="icon">
-  <link href="./images/tpn.jpg" rel="apple-touch-icon">
+    <!-- Favicons -->
+    <link href="./images/tpn.jpg" rel="icon">
+    <link href="./images/tpn.jpg" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chart.js/chart.min.js"></script>
+    <script src="assets/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/vendor/quill/quill.min.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
 
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
 </head>
 
 <body>
-
-  <style>
-    @media screen and (max-width: 768px) {
-      #icon-image {
-        margin-left: -30px;
-      }
-
-    }
-    @media screen and (max-width: 850px) {
-      .container {
-        width: 300px;
-        padding-right: 75px;
-      }
-    }
-  </style>
-  <main>
+    <style>
+    
+    </style>
     <div class="container">
-      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
-              <div class="d-flex justify-content-center py-4">
-                <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="./images/tpn.jpg" alt="">
-                  <span class="d-none d-lg-block">TPN</span>
-                </a>
-              </div><!-- End Logo -->
-              <div class="card mb-3">
+        <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+                        <div class="d-flex justify-content-center py-4">
+                            <a href="index.html" class="logo d-flex align-items-center w-auto">
+                                <img src="./images/tpn.jpg" alt="">
+                                <span class="d-none d-lg-block">TPN</span>
+                            </a>
+                        </div>
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="pt-4 pb-2">
+                                    <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
+                                    <p class="text-center small">Enter your username & password to login</p>
+                                </div>
+                                <div id="icon-image"><img src="images/p4.jpg" alt="" width="300"
+                                    style="padding-left:60px;"></div>
+                                    <div class="col-12">
+                                        <input type="text" id="userTpn" class="form-control rounded-pill border-0 shadow-sm px-4 mb-3"  style="background-color: #f6f9ff" placeholder="Enter your username">
+                                        <input type="password" id="passTpn"class="form-control rounded-pill border-0 shadow-sm px-4 mb-3"  style="background-color: #f6f9ff" placeholder="Password">
+                                        <div class="custom-control custom-switch mb-3">
+                                            <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                            <label class="custom-control-label" for="customSwitch1">Keep me Logged In </label>
+                                        </div>
+                                    </div>
 
-                <div class="card-body">
-
-                  <div class="pt-4 pb-2">
-                    <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
-                    <p class="text-center small">Enter your username & password to login</p>
-                  </div>
-                  <div id="icon-image"><img src="images/p4.jpg" alt="" width="300" style="padding-left:60px;"></div>
-
-                  <form class="row g-3 needs-validation" novalidate>
-                    <div class="col-12">
-                      <label for="yourUsername" class="form-label"></label>
-                      <div class="input-group has-validation">
-                        <input type="text" name="username" class="form-control rounded-pill border-0 shadow-sm px-4"
-                          style="background-color: #f6f9ff" id="email" placeholder="Enter your username" required>
-                        <div class="invalid-feedback">Please enter your username.</div>
-                      </div>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="remember"
+                                                value="true" id="rememberMe">
+                                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="custom-control custom-switch mb-3">
+                                        <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                        <label class="custom-control-label" for="customSwitch1">Keep me Logged In</label>
+                                    </div> -->
+                                    <div class="col-12">
+                                        <button type="text" class="btn btn-primary w-100" id="sub_btn" style="border-radius: 50px; color: #f6f9ff;">Login</button>
+                                    </div>
+                                    <div class="col-12">
+                                        <p class="small mb-0">Don't have account? <a
+                                            href="signup">Create an account</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="col-12">
-                      <label for="yourPassword" class="form-label"></label>
-                      <input type="password" name="password" class="form-control rounded-pill border-0 shadow-sm px-4"
-                        style="background-color: #f6f9ff" placeholder="Password" id="psw" required>
-                      <div class="invalid-feedback">Please enter your password!</div>
-                    </div>
-
-                    <div class="col-12">
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
-                        <label class="form-check-label" for="rememberMe">Remember me</label>
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <button class="btn btn-primary w-100" id="submitData" style="border-radius: 50px;"
-                        type="button"><a href="home" style="color: #f6f9ff;">Login</a></button>
-                    </div>
-                    <div class="col-12">
-                      <p class="small mb-0">Don't have account? <a href="pages-register.html">Create an account</a></p>
-                    </div>
-                  </form>
                 </div>
-              </div>
-            </div>
-          </div>
+            </section>
         </div>
-      </section>
-    </div>
-  </main><!-- End #main -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/chart.js/chart.min.js"></script>
-  <script src="assets/vendor/echarts/echarts.min.js"></script>
-  <script src="assets/vendor/quill/quill.min.js"></script>
-  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-app.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyD_FIwnKPG20NO236nymirbYqUoT5imt80",
+            authDomain: "aa-project-fd866.firebaseapp.com",
+            databaseURL: "https://aa-project-fd866-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "aa-project-fd866",
+            storageBucket: "aa-project-fd866.appspot.com",
+            messagingSenderId: "21571323809",
+            appId: "1:21571323809:web:5522690d68e5e69800ede0"
+        };
+        const app = initializeApp(firebaseConfig);
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+        import { getDatabase, ref, set, child, get }
+            from "https://www.gstatic.com/firebasejs/9.8.4/firebase-database.js";
+        const db = getDatabase();
+
+        const username = document.getElementById('userTpn');
+        const pass = document.getElementById('passTpn');
+        const submit = document.getElementById('sub_btn');
+
+        function AuthenticateUser(){
+            const dbref = ref(db);
+            get(child(dbref, "UsersList/" + username.value)).then((snapshot)=>{
+                if(snapshot.exists()) {
+                    alert()
+                    let dbpass = decPass(snapshot.val().password);
+                    if(dbpass == pass.value){
+                        login(snapshot.val());
+                    }
+                    else{
+                        alert("user does not exist")
+                    }
+                }
+                else {
+                    alert("username or passwoed is invalid");
+                }
+            });
+        }
+        function decPass(dbpass){
+            var pass12 = CryptoJS.AES.decrypt(dbpass, pass.value);
+            return pass12.toString(CryptoJS.enc.Utf8);
+        }
+
+        function login(user){
+            let keepLoggedIn = document.getElementById('customSwitch1').checked;
+            if(!keepLoggedIn){
+                sessionStorage.setItem('user', JSON.stringify(user));
+                window.location="try";
+            }
+            else{
+                localStorage.setItem('keepLoggedIn','yes');
+                localStorage.setItem('user', JSON.stringify(user));
+                window.location="try";
+            }
+        }
+        submit.addEventListener('click', AuthenticateUser);
+
+    </script>
 </body>
-
-<script type="module">
-
-  // import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-app.js";
- 
-  // const firebaseConfig = {
-  //   apiKey: "AIzaSyBJa71XulJCSUUW8rbu6uP5eqDROm3kQ8M",
-  //   authDomain: "tpn-project-62.firebaseapp.com",
-  //   projectId: "tpn-project-62",
-  //   storageBucket: "tpn-project-62.appspot.com",
-  //   messagingSenderId: "431129345062",
-  //   appId: "1:431129345062:web:176f376b4d719ecc70fae7"
-  // };
-
- 
-  // const app = initializeApp(firebaseConfig);
-  // const auth = getAuth();
-  // const database = getDatabase(app);
-
-  // submitData.addEventListener('click', (e) => {
-  //   var email = document.getElementById('email').value;
-  //   var password = document.getElementById('psw').value;
-
-  //   createUserWithEmailAndPassword(auth, email, password)
-  //   signInWithEmailAndPassword(auth, email, password)
-  //     .then((userCredential) => {
-  //       const user = userCredential.user;
-  //       var lgDate = new Date();
-  //       update(ref(database, 'users/' + user.uid), {
-  //         last_login: lgDate,
-  //       })
-  //         .then(() => {
-  //           alert('user loggd in successfully');
-  //         })
-  //         .catch((error) => {
-  //           alert(error);
-  //         });
-  //     })
-  //     .catch((error) => {
-  //       const errorCode = error.code;
-  //       const errorMessage = error.message;
-  //       alert(errorMessage);
-  //     });
-  // });
-</script>
 </html>

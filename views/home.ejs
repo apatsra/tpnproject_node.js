@@ -2,507 +2,585 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>TPN</title>
-  <meta content="" name="description">
+    <title>TPN</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta content="" name="description">
 
-  <meta content="" name="keywords">
+    <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="./images/tpn.jpg" rel="icon">
-  <link href="./images/tpn.jpg" rel="apple-touch-icon">
+    <!-- Favicons -->
+    <link href="./images/tpn.jpg" rel="icon">
+    <link href="./images/tpn.jpg" rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="./FlexStart/assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="./FlexStart/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="./FlexStart/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="./FlexStart/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="./FlexStart/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="./FlexStart/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="./FlexStart/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="./FlexStart/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./FlexStart/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="./FlexStart/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="./FlexStart/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="./FlexStart/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
-  <link href="./FlexStart/assets/css/style.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="./FlexStart/assets/css/style.css" rel="stylesheet">
 
 </head>
 
 <body>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-
-      <a href="home.html" class="logo d-flex align-items-center">
-       
-        <img src="./images/tpn.jpg" alt="">
-        <h1 data-aos="fade-up" style="color: #0771d5;"></h1>
-
-      </a>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#values">Services</a></li>
-          <li><a class="nav-link scrollto" href="#features">Income</a></li>
-          <li><a class="nav-link scrollto" href="#recent-blog-posts">News</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="login">Employee Login</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="hero d-flex align-items-center">
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 d-flex flex-column justify-content-center">
-          <h1 data-aos="fade-up"> TPN Development Service Co.,Ltd.</h1>
-          <h2 data-aos="fade-up" data-aos-delay="400">All HR services end up at TPN</h2>
-          <div data-aos="fade-up" data-aos-delay="600">
-            <div class="text-center text-lg-start">
-              <a href="#about"
-                class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center"
-                style="background-color: #2c8be4;">
-                <span>Get Started</span>
-                <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
-          <img src="./FlexStart/assets/img/hero-img.png" style="border-radius: 70px;" class="img-fluid" alt="">
-        </div>
-      </div>
-    </div>
-
-  </section><!-- End Hero -->
-
-  <main id="main">
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-
-      <div class="container" data-aos="fade-up">
-        <div class="row gx-0">
-
-          <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
-            <div class="content" style="border-radius: 0px;">
-              <h3 style="color: #2c8be4;">Who We Are</h3>
-              <h2>บริษัทจ้างเหมาแรงงานในโรงงานอุตสาหกรรม </h2>
-              <p>
-                เรามีประสบการณ์มากกว่า 15 ปี
-                จัดหาแรงงานเพื่อทำงานให้เหมาะสมและตรงตามความต้องการของโรงงานอุตสาหกรรม
-                ตั้งแต่พนักงานฝ่ายผลิตและเจ้าหน้าที่ประจำในโรงงาน ซึ่งบริษัท TPN เป็นที่รู้จักและมีฐานลูกค้าอย่างแพร่หลายในจังหวัดนครราชสีมาและต่างจังหวัด
-              </p>
-              <div class="text-center text-lg-start">
-                <a href="#"
-                  class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center"
-                  style="background-color: #2c8be4;">
-                  <span>สนใจสมัคร</span>
-                  <i class="bi bi-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-            <img src="./images/p10.jpg" class="img-fluid" alt="">
-          </div>
-
-        </div>
-      </div>
-
-    </section><!-- End About Section -->
-
-    <!-- ======= Values Section ======= -->
-    <section id="values" class="values">
-
-      <div class="container" data-aos="fade-up">
-
-        <header class="section-header">
-          <h2 style="color: #2c8be4;">Our services</h2>
-          <p>บริการของเรา</p>
-        </header>
-
-        <div class="row">
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="box">
-              <img src="./FlexStart/assets/img/values-1.png" class="img-fluid" alt="">
-              <h3>
-                บริการจ้างเหมาแรงงาน
-                ในภาคอุตสาหกรรม</h3>
-              <p>Manufacturing Manpower Service</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
-            <div class="box">
-              <img src="./FlexStart/assets/img/values-2.png" class="img-fluid" alt="">
-              <h3>การบริการรถรับ-ส่ง</h3>
-              <p>Car Driver</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
-            <div class="box">
-              <img src="./FlexStart/assets/img/values-3.png" class="img-fluid" alt="">
-              <h3>บริการ HR แบบครบวงจร</h3>
-              <p>All HR Services</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- End Values Section -->
-
-    <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts">
-      <div class="container" data-aos="fade-up">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="count-box">
-              <i class="bi bi-emoji-smile"></i>
-              <div>
-                <span data-purecounter-start="0" data-purecounter-end="1012" data-purecounter-duration="1"
-                  class="purecounter"></span>
-                <p>Happy Employee</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="count-box">
-              <i class="bi bi-journal-richtext" style="color: #ee6c20;"></i>
-              <div>
-                <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1"
-                  class="purecounter"></span>
-                <p>Factory</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="count-box">
-              <i class="bi bi-people" style="color: #bb0852;"></i>
-              <div>
-                <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
-                  class="purecounter"></span>
-                <p>Hard Workers</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Counts Section -->
-
-    <!-- ======= Features Section ======= -->
-    <section id="features" class="features">
-
-      <div class="container" data-aos="fade-up">
-
-        <header class="section-header">
-          <h2 style="color: #2c8be4;">Income & Benefits</h2>
-          <p>รายได้&สวัสดิการ</p>
-        </header>
-
-        <div class="row">
-
-          <div class="col-lg-6">
-            <img src="./FlexStart/assets/img/features.png" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-6 mt-5 mt-lg-0 d-flex">
-            <div class="row align-self-center gy-4">
-
-              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>ค่าแรง 325 บาท/วัน</h3>
-                </div>
-              </div>
-
-              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="300">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>ค่าอาหาร & กะดึก 15-20 บาท/วัน</h3>
-                </div>
-              </div>
-
-              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="400">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>เบี้ยขยัน 300-500 บาท/เดือน</h3>
-                </div>
-              </div>
-
-              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="500">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>โอที ทุกวัน 2.5-4.5 ช.ม./วัน</h3>
-                </div>
-              </div>
-
-              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="600">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>เปิดบัญชีธนาคาร & รถรับส่ง ฟรี</h3>
-                </div>
-              </div>
-
-              <div class="col-md-6" data-aos="zoom-out" data-aos-delay="700">
-                <div class="feature-box d-flex align-items-center">
-                  <i class="bi bi-check"></i>
-                  <h3>ประกันชีวิต 150,000 บาท</h3>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-        </div> <!-- / row -->
-
-        <!-- จุดรับสมัคร -->
-        <div class="row feature-icons" data-aos="fade-up">
-          <div class="container" data-aos="fade-up">
-            <header class="section-header">
-              <h2 style="color: #2c8be4;">Our Address</h2>
-              <p>จุดรับสมัคร</p>
-            </header>
-            <div class="row">
-              <div class="col-xl-4 text-center" data-aos="fade-right" data-aos-delay="100">
-                <img src="./FlexStart/assets/img/features-3.png" class="img-fluid p-4" alt="">
-              </div>
-
-              <div class="col-xl-8 d-flex content">
-                <div class="row align-self-center gy-4">
-
-                  <div class="col-md-6 icon-box" data-aos="fade-up">
-                    <i class="ri-line-chart-line"></i>
-                    <div>
-                      <h4>สำนักงานใหญ่บริษัท TPN</h4>
-                      <p>716/1 หมู่ที่ 3 ตำบล หนองบัวศาลา อำเภอ เมืองนครราชสีมา จังหวัด นครราชสีมา 30000</p>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-                    <i class="ri-stack-line"></i>
-                    <div>
-                      <h4>จุดรับสมัครย่อย สาขา SEWT-E (โรงงานผลิตชุดสายไฟในรถยนต์) </h4>
-                      <p>ทางเข้าอ่างห้วยยาง/อ่างหิน อำเภอ ปักธงชัยเหนือ </p>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-                    <i class="ri-brush-4-line"></i>
-                    <div>
-                      <h4>จุดรับสมัครย่อย สาขา บริษัท NK อำเภอ สูงเนิน</h4>
-                      <p>หน้าป้อม รปภ. บริษัท NK 
-                         </p>
-                    </div>
-                  </div>
-                  <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-                    <i class="ri-brush-4-line"></i>
-                    <div>
-                      <h4>จุดรับสมัครย่อย สาขา สีคิ้ว</h4>
-                      <p>ทางเข้าศาลสีคิ้ว/ติดถนนมิตรภาพ
-                         </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> <!-- End จุดรับสมัคร -->
-
-        </div>
-
-    </section> <!-- End Features Section -->
-
-
-    <!-- ======= new Section ======= -->
-    <section id="recent-blog-posts" class="recent-blog-posts">
-
-      <div class="container" data-aos="fade-up">
-
-        <header class="section-header">
-          <h2>news</h2>
-          <p>ข่าวประชาสัมพันธ์</p>
-        </header>
-
-        <div class="row">
-
-          <div class="col-lg-4">
-            <div class="post-box">
-              <div class="post-img"><img src="./images/n2.jpg" class="img-fluid" alt=""></div>
-              <span class="post-date">Tue, September 15</span>
-              <h3 class="post-title">รับสมัครพนักงานไปทำงานที่กาญจนบุรี</h3>
-              <a href="blog-single.html" class="readmore stretched-link mt-auto"><span></span><i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="post-box">
-              <div class="post-img"><img src="./images/n3.jpg" class="img-fluid" alt=""></div>
-              <span class="post-date">Mon, July 11</span>
-              <h3 class="post-title">บริษัทฮิตาชิเปิดรับสมัครพนักงานฝ่ายบัญชี 2 อัตรา</h3>
-              <a href="blog-single.html" class="readmore stretched-link mt-auto"><span></span><i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="post-box">
-              <div class="post-img"><img src="./images/n1.jpg" class="img-fluid" alt=""></div>
-              <span class="post-date">Fri, August 28</span>
-              <h3 class="post-title">โรงงานสายไฟเปิดรับสมัครพนักงานจำนวนมาก</h3>
-              <a href="blog-single.html" class="readmore stretched-link mt-auto"><span></span><i
-                  class="bi bi-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </section>
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-
-      <div class="container" data-aos="fade-up">
-
-        <header class="section-header">
-          <h2 style="color: #2c8be4;">Contact</h2>
-          <p>Contact Us</p>
-        </header>
-
-        <div class="row gy-4">
-
-          <div class="col-lg-6">
-
-            <div class="row gy-4">
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bi bi-geo-alt"></i>
-                  <h3>Address</h3>
-                  <p>จังหวัด นครราชสีมา<br> </p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bi bi-telephone"></i>
-                  <h3>Call Us</h3>
-                  <p>086-2771599<br>089-8467599</p>
-
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bi bi-envelope"></i>
-                  <h3>Email Us</h3>
-                  <p>info@tpn.com<br>contact@tpn.com</p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bi bi-clock"></i>
-                  <h3>Open Hours</h3>
-                  <p>Monday - Saturday<br>8:00AM - 05:00PM</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="row gy-4">
-              <div>
-                <img class="img-fluid" src="./images/p9.jpg" alt="" style="width: 550px;">
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </section><!-- End Contact Section -->
-
-  </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-    <div class="footer-top">
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-5 col-md-12 footer-info">
-            <a href="index.html" class="logo d-flex align-items-center">
-              <!-- <img src="./images/tpn.jpg" alt=""> -->
-              <span>
-                <p>tpn social media</p>
-              </span>
-            </a>
-            <div class="social-links mt-3">
-              <a href="https://www.facebook.com/hrtpn.development" class="facebook"><i class="bi bi-facebook"></i></a>
-              <a href="#" class="line"><i class="bi bi-linkedin"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-2 col-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="home">Home</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#">Employee Login</a></li>
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"></nav>
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
             </ul>
-          </div>
-
-          <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-            <h4>Contact Us</h4>
-            <p>       
-            <strong>Phone:</strong> 086-2771599<br>089-8467599
-            <br><strong>Email:</strong> info@tpn.com<br>
-            </p>
-          </div>
+            <form class="form-inline my-2 my-lg-0">
+                <ul class="form-inline my-2 my-lg-0">
+                    <li class="nav-item mx-1">
+                        <a id="userlink" class="nav-link" href="">Username</a>
+                    </li>
+                    <li class="nav-item mx-1">
+                        <a id="signoutlink" class="nav-link" href="">Sign Out</a>
+                    </li>
+                </ul>
+            </form>
         </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>TPN</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
+    
+    <h3 id="hh"></h3> -->
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      </div>
-    </div>
-  </footer><!-- End Footer -->
+            <a href="home.html" class="logo d-flex align-items-center">
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+                <img src="./images/tpn.jpg" alt="">
+                <h1 data-aos="fade-up" style="color: #0771d5;"></h1>
+            </a>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#about">About</a></li>
+                    <li><a class="nav-link scrollto" href="#values">Services</a></li>
+                    <li><a class="nav-link scrollto" href="#features">Income</a></li>
+                    <li><a class="nav-link scrollto" href="#recent-blog-posts">News</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                    <li><a class="getstarted scrollto" href="login">Employee Login</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav> 
+            <!-- .navbar -->
 
-  <!-- Vendor JS Files -->
-  <script src="./FlexStart/assets/vendor/purecounter/purecounter.js"></script>
-  <script src="./FlexStart/assets/vendor/aos/aos.js"></script>
-  <script src="./FlexStart/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="./FlexStart/assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="./FlexStart/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="./FlexStart/assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="./FlexStart/assets/vendor/php-email-form/validate.js"></script>
+        </div>
+    </header><!-- End Header -->
 
-  <!-- Template Main JS File -->
-  <script src="./FlexStart/assets/js/main.js"></script>
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="hero d-flex align-items-center">
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center">
+                    <h1 data-aos="fade-up"> TPN Development Service Co.,Ltd.</h1>
+                    <h2 data-aos="fade-up" data-aos-delay="400">All HR services end up at TPN</h2>
+                    <div data-aos="fade-up" data-aos-delay="600">
+                        <div class="text-center text-lg-start">
+                            <a href="#about"
+                                class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center"
+                                style="background-color: #2c8be4;">
+                                <span>Get Started</span>
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                    <img src="./FlexStart/assets/img/hero-img.png" style="border-radius: 70px;" class="img-fluid"
+                        alt="">
+                </div>
+            </div>
+        </div>
 
+    </section><!-- End Hero -->
+
+    <main id="main">
+        <!-- ======= About Section ======= -->
+        <section id="about" class="about">
+
+            <div class="container" data-aos="fade-up">
+                <div class="row gx-0">
+
+                    <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up"
+                        data-aos-delay="200">
+                        <div class="content" style="border-radius: 0px;">
+                            <h3 style="color: #2c8be4;">Who We Are</h3>
+                            <h2>บริษัทจ้างเหมาแรงงานในโรงงานอุตสาหกรรม </h2>
+                            <p>
+                                เรามีประสบการณ์มากกว่า 15 ปี
+                                จัดหาแรงงานเพื่อทำงานให้เหมาะสมและตรงตามความต้องการของโรงงานอุตสาหกรรม
+                                ตั้งแต่พนักงานฝ่ายผลิตและเจ้าหน้าที่ประจำในโรงงาน ซึ่งบริษัท TPN
+                                เป็นที่รู้จักและมีฐานลูกค้าอย่างแพร่หลายในจังหวัดนครราชสีมาและต่างจังหวัด
+                            </p>
+                            <div class="text-center text-lg-start">
+                                <a href="#"
+                                    class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center"
+                                    style="background-color: #2c8be4;">
+                                    <span>สนใจสมัคร</span>
+                                    <i class="bi bi-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+                        <img src="./images/p10.jpg" class="img-fluid" alt="">
+                    </div>
+
+                </div>
+            </div>
+
+        </section><!-- End About Section -->
+
+        <!-- ======= Values Section ======= -->
+        <section id="values" class="values">
+
+            <div class="container" data-aos="fade-up">
+
+                <header class="section-header">
+                    <h2 style="color: #2c8be4;">Our services</h2>
+                    <p>บริการของเรา</p>
+                </header>
+
+                <div class="row">
+
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="box">
+                            <img src="./FlexStart/assets/img/values-1.png" class="img-fluid" alt="">
+                            <h3>
+                                บริการจ้างเหมาแรงงาน
+                                ในภาคอุตสาหกรรม</h3>
+                            <p>Manufacturing Manpower Service</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
+                        <div class="box">
+                            <img src="./FlexStart/assets/img/values-2.png" class="img-fluid" alt="">
+                            <h3>การบริการรถรับ-ส่ง</h3>
+                            <p>Car Driver</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
+                        <div class="box">
+                            <img src="./FlexStart/assets/img/values-3.png" class="img-fluid" alt="">
+                            <h3>บริการ HR แบบครบวงจร</h3>
+                            <p>All HR Services</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section><!-- End Values Section -->
+
+        <!-- ======= Counts Section ======= -->
+        <section id="counts" class="counts">
+            <div class="container" data-aos="fade-up">
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="count-box">
+                            <i class="bi bi-emoji-smile"></i>
+                            <div>
+                                <span data-purecounter-start="0" data-purecounter-end="1012"
+                                    data-purecounter-duration="1" class="purecounter"></span>
+                                <p>Happy Employee</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="count-box">
+                            <i class="bi bi-journal-richtext" style="color: #ee6c20;"></i>
+                            <div>
+                                <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1"
+                                    class="purecounter"></span>
+                                <p>Factory</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <div class="count-box">
+                            <i class="bi bi-people" style="color: #bb0852;"></i>
+                            <div>
+                                <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
+                                    class="purecounter"></span>
+                                <p>Hard Workers</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Counts Section -->
+
+        <!-- ======= Features Section ======= -->
+        <section id="features" class="features">
+
+            <div class="container" data-aos="fade-up">
+
+                <header class="section-header">
+                    <h2 style="color: #2c8be4;">Income & Benefits</h2>
+                    <p>รายได้&สวัสดิการ</p>
+                </header>
+
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <img src="./FlexStart/assets/img/features.png" class="img-fluid" alt="">
+                    </div>
+
+                    <div class="col-lg-6 mt-5 mt-lg-0 d-flex">
+                        <div class="row align-self-center gy-4">
+
+                            <div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
+                                <div class="feature-box d-flex align-items-center">
+                                    <i class="bi bi-check"></i>
+                                    <h3>ค่าแรง 325 บาท/วัน</h3>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6" data-aos="zoom-out" data-aos-delay="300">
+                                <div class="feature-box d-flex align-items-center">
+                                    <i class="bi bi-check"></i>
+                                    <h3>ค่าอาหาร & กะดึก 15-20 บาท/วัน</h3>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6" data-aos="zoom-out" data-aos-delay="400">
+                                <div class="feature-box d-flex align-items-center">
+                                    <i class="bi bi-check"></i>
+                                    <h3>เบี้ยขยัน 300-500 บาท/เดือน</h3>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6" data-aos="zoom-out" data-aos-delay="500">
+                                <div class="feature-box d-flex align-items-center">
+                                    <i class="bi bi-check"></i>
+                                    <h3>โอที ทุกวัน 2.5-4.5 ช.ม./วัน</h3>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6" data-aos="zoom-out" data-aos-delay="600">
+                                <div class="feature-box d-flex align-items-center">
+                                    <i class="bi bi-check"></i>
+                                    <h3>เปิดบัญชีธนาคาร & รถรับส่ง ฟรี</h3>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6" data-aos="zoom-out" data-aos-delay="700">
+                                <div class="feature-box d-flex align-items-center">
+                                    <i class="bi bi-check"></i>
+                                    <h3>ประกันชีวิต 150,000 บาท</h3>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div> <!-- / row -->
+
+                <!-- จุดรับสมัคร -->
+                <div class="row feature-icons" data-aos="fade-up">
+                    <div class="container" data-aos="fade-up">
+                        <header class="section-header">
+                            <h2 style="color: #2c8be4;">Our Address</h2>
+                            <p>จุดรับสมัคร</p>
+                        </header>
+                        <div class="row">
+                            <div class="col-xl-4 text-center" data-aos="fade-right" data-aos-delay="100">
+                                <img src="./FlexStart/assets/img/features-3.png" class="img-fluid p-4" alt="">
+                            </div>
+
+                            <div class="col-xl-8 d-flex content">
+                                <div class="row align-self-center gy-4">
+
+                                    <div class="col-md-6 icon-box" data-aos="fade-up">
+                                        <i class="ri-line-chart-line"></i>
+                                        <div>
+                                            <h4>สำนักงานใหญ่บริษัท TPN</h4>
+                                            <p>716/1 หมู่ที่ 3 ตำบล หนองบัวศาลา อำเภอ เมืองนครราชสีมา จังหวัด นครราชสีมา 30000</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+                                        <i class="ri-stack-line"></i>
+                                        <div>
+                                            <h4>จุดรับสมัครย่อย สาขา SEWT-E (โรงงานผลิตชุดสายไฟในรถยนต์) </h4>
+                                            <p>ทางเข้าอ่างห้วยยาง/อ่างหิน อำเภอ ปักธงชัยเหนือ </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                                        <i class="ri-brush-4-line"></i>
+                                        <div>
+                                            <h4>จุดรับสมัครย่อย สาขา บริษัท NK อำเภอ สูงเนิน</h4>
+                                            <p>หน้าป้อม รปภ. บริษัท NK
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+                                        <i class="ri-brush-4-line"></i>
+                                        <div>
+                                            <h4>จุดรับสมัครย่อย สาขา สีคิ้ว</h4>
+                                            <p>ทางเข้าศาลสีคิ้ว/ติดถนนมิตรภาพ
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- End จุดรับสมัคร -->
+
+                </div>
+
+        </section> <!-- End Features Section -->
+
+
+        <!-- ======= new Section ======= -->
+        <section id="recent-blog-posts" class="recent-blog-posts">
+
+            <div class="container" data-aos="fade-up">
+
+                <header class="section-header">
+                    <h2>news</h2>
+                    <p>ข่าวประชาสัมพันธ์</p>
+                </header>
+
+                <div class="row">
+
+                    <div class="col-lg-4">
+                        <div class="post-box">
+                            <div class="post-img"><img src="./images/n2.jpg" class="img-fluid" alt=""></div>
+                            <span class="post-date">Tue, September 15</span>
+                            <h3 class="post-title">รับสมัครพนักงานไปทำงานที่กาญจนบุรี</h3>
+                            <a href="blog-single.html" class="readmore stretched-link mt-auto"><span></span><i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="post-box">
+                            <div class="post-img"><img src="./images/n3.jpg" class="img-fluid" alt=""></div>
+                            <span class="post-date">Mon, July 11</span>
+                            <h3 class="post-title">บริษัทฮิตาชิเปิดรับสมัครพนักงานฝ่ายบัญชี 2 อัตรา</h3>
+                            <a href="blog-single.html" class="readmore stretched-link mt-auto"><span></span><i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="post-box">
+                            <div class="post-img"><img src="./images/n1.jpg" class="img-fluid" alt=""></div>
+                            <span class="post-date">Fri, August 28</span>
+                            <h3 class="post-title">โรงงานสายไฟเปิดรับสมัครพนักงานจำนวนมาก</h3>
+                            <a href="blog-single.html" class="readmore stretched-link mt-auto"><span></span><i
+                                    class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+
+            <div class="container" data-aos="fade-up">
+
+                <header class="section-header">
+                    <h2 style="color: #2c8be4;">Contact</h2>
+                    <p>Contact Us</p>
+                </header>
+
+                <div class="row gy-4">
+
+                    <div class="col-lg-6">
+
+                        <div class="row gy-4">
+                            <div class="col-md-6">
+                                <div class="info-box">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <h3>Address</h3>
+                                    <p>จังหวัด นครราชสีมา<br> </p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-box">
+                                    <i class="bi bi-telephone"></i>
+                                    <h3>Call Us</h3>
+                                    <p>086-2771599<br>089-8467599</p>
+
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-box">
+                                    <i class="bi bi-envelope"></i>
+                                    <h3>Email Us</h3>
+                                    <p>info@tpn.com<br>contact@tpn.com</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-box">
+                                    <i class="bi bi-clock"></i>
+                                    <h3>Open Hours</h3>
+                                    <p>Monday - Saturday<br>8:00AM - 05:00PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="row gy-4">
+                            <div>
+                                <img class="img-fluid" src="./images/p9.jpg" alt="" style="width: 550px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section><!-- End Contact Section -->
+
+    </main><!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="col-lg-5 col-md-12 footer-info">
+                        <a href="index.html" class="logo d-flex align-items-center">
+                            <!-- <img src="./images/tpn.jpg" alt=""> -->
+                            <span>
+                                <p>tpn social media</p>
+                            </span>
+                        </a>
+                        <div class="social-links mt-3">
+                            <a href="https://www.facebook.com/hrtpn.development" class="facebook"><i
+                                    class="bi bi-facebook"></i></a>
+                            <a href="#" class="line"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bi bi-chevron-right"></i> <a href="home">Home</a></li>
+                            <li><i class="bi bi-chevron-right"></i> <a href="#">Employee Login</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+                        <h4>Contact Us</h4>
+                        <p>
+                            <strong>Phone:</strong> 086-2771599<br>089-8467599
+                            <br><strong>Email:</strong> info@tpn.com<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>TPN</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+            class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="./FlexStart/assets/vendor/purecounter/purecounter.js"></script>
+    <script src="./FlexStart/assets/vendor/aos/aos.js"></script>
+    <script src="./FlexStart/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./FlexStart/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="./FlexStart/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="./FlexStart/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="./FlexStart/assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="./FlexStart/assets/js/main.js"></script>
+    <script>
+        let userlink = document.getElementById('userlink');
+        let signoutlink = document.getElementById('signoutlink');
+        let header = document.getElementById('hh')
+        var currentUser = null;
+
+        function getUsername(){
+            let keepLoggedIn = localStorage.getItem("keepLoggedIn");
+            if(keepLoggedIn == "yes"){
+                currentUser = JSON.parse(localStorage.getItem('user'));
+            }
+            else{
+                currentUser = JSON.parse(sessionStorage.getItem('user'));
+            }
+        }
+        function Signout(){
+            sessionStorage.removeItem('user');
+            localStorage.removeItem('user');
+            localStorage.removeItem('keepLoggedIn');
+            window.location = "home";
+        }
+        window.onload = function(){
+            getUsername();
+            if(currentUser == null){
+                userlink.innerText="Create New Account";
+                userlink.classList.replace("nav-link","btn");
+                userlink.classList.add("btn-primary");
+                userlink.href = "signup";
+
+                signoutlink.innerText="Login";
+                signoutlink.classList.replace("nav-link","btn");
+                signoutlink.classList.add("btn-success");
+                signoutlink.href = "login";
+            }
+            else{
+                userlink.innerText = currentUser.username;
+                header.innerText = "welcome" + currentUser.fullname;
+                userlink.classList.replace("btn","nav-link");
+                userlink.classList.add("btn-primary");
+                user.href = "#"
+
+                signoutlink.innerText="Sign Out";
+                signoutlink.classList.replace("btn","nav-link");
+                signoutlink.classList.add("btn-success");
+                signoutlink.href = "javascript:Signout()";
+            }
+        }
+    </script>
 </body>
 
 </html>
